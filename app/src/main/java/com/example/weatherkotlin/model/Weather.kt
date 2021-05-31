@@ -12,8 +12,7 @@ data class Weather(
 
 fun getDefaultCity() = City("Москва", 55.7558, 37.6173)
 
-fun getWorldCities(): List<Weather> {
-    return listOf(
+fun getWorldCities() = listOf(
         Weather(City("Лондон", 51.50853, -0.12574), 1, 2),
         Weather(City("Токио", 35.6895, 139.69171), 3, 4),
         Weather(City("Париж", 48.85341, 2.3488), 5, 6),
@@ -25,10 +24,8 @@ fun getWorldCities(): List<Weather> {
         Weather(City("Киев", 50.4501, 30.5234), 17, 18),
         Weather(City("Пекин", 39.9042, 116.4073963), 19, 20)
     )
-}
 
-fun getRussianCities(): MutableList<Weather> {
-    return  mutableListOf(
+fun getRussianCities() = mutableListOf(
         Weather(City("Москва", 55.755826, 37.6173), 1, 2),
         Weather(City("Санкт-Петербург", 59.9342802, 30.3350986), 3, 3),
         Weather(City("Новосибирск", 55.0083526, 82.9357327), 5, 6),
@@ -40,4 +37,3 @@ fun getRussianCities(): MutableList<Weather> {
         Weather(City("Ростов-на-Дону", 47.2357137, 39.701505), 17, 18),
         Weather(City("Уфа", 54.7387621, 55.9720554), 19, 20)
     )
-}
