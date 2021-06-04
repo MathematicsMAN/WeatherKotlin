@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+app/src/main/res/layout/main_activity_webview.xml
+apikey.properties

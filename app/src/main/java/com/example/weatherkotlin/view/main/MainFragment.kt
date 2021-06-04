@@ -1,20 +1,23 @@
 package com.example.weatherkotlin.view.main
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.weatherkotlin.R
 import com.example.weatherkotlin.databinding.FragmentMainBinding
 import com.example.weatherkotlin.model.Weather
-import com.example.weatherkotlin.view.DetailsFragment
+import com.example.weatherkotlin.view.details.DetailsFragment
 import com.example.weatherkotlin.viewmodel.AppState
 import com.example.weatherkotlin.viewmodel.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_main.*
+import java.lang.RuntimeException
 
 class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
@@ -112,5 +115,19 @@ class MainFragment : Fragment() {
         length: Int = Snackbar.LENGTH_INDEFINITE
     ) {
         Snackbar.make(this, text, length).setAction(actionText, action).show()
+    }
+
+    fun View.showKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        this.requestFocus()
+        imm.showSoftInput(this, 0)
+    }
+
+    fun View.hideKeyboard(): Boolean {
+        try {
+            val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            return inputMethodManager.hideSoftInputFromWindow(windowToken, 0)
+        } catch (ex: RuntimeException) { }
+        return false
     }
 }
