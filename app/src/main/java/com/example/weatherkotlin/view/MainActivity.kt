@@ -3,6 +3,7 @@ package com.example.weatherkotlin.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.weatherkotlin.R
+import com.example.weatherkotlin.view.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, MainFragment.newInstance())
-                .commitNow()
+                .commitAllowingStateLoss()
         }
     }
 }
