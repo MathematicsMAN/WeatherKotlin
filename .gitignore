@@ -19,3 +19,4 @@ apikey.properties
 /app/src/main/res/menu/main_screen_menu.xml
 /app/src/main/java/com/example/weatherkotlin/ThreadsFragment.kt
 /app/src/main/java/com/example/weatherkotlin/view/experiments/*.*
+/app/src/main/java/com/example/weatherkotlin/view/MainBroadcastReceiver.kt
