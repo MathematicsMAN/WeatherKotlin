@@ -21,3 +21,4 @@ apikey.properties
 /app/src/main/java/com/example/weatherkotlin/view/MainBroadcastReceiver.kt
 /app/src/release/res/values/google_maps_api.xml
 /app/src/debug/res/values/google_maps_api.xml
+/app/google-services.json

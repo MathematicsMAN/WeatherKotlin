@@ -5,6 +5,10 @@ plugins {
     id 'kotlin-kapt'
 }
 
+//apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+
 android {
     compileSdkVersion 30
 
@@ -85,6 +89,10 @@ dependencies {
 
     //GoogleMaps
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
+
+    //Google Firebase
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
