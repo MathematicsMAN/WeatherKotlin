@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.weatherkotlin.R
 import com.example.weatherkotlin.view.experiments.ThreadsFragment
 import com.example.weatherkotlin.databinding.MainActivityBinding
-import com.example.weatherkotlin.view.experiments.MainBroadcastReceiver
 import com.example.weatherkotlin.view.main.MainFragment
 
 class MainActivity : AppCompatActivity() {

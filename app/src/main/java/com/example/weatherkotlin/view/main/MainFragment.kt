@@ -12,10 +12,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.weatherkotlin.R
 import com.example.weatherkotlin.databinding.FragmentMainBinding
 import com.example.weatherkotlin.model.Weather
+import com.example.weatherkotlin.utils.showSnackBar
 import com.example.weatherkotlin.view.details.DetailsFragment
 import com.example.weatherkotlin.viewmodel.AppState
 import com.example.weatherkotlin.viewmodel.MainViewModel
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_main.*
 import java.lang.RuntimeException
 
@@ -107,15 +107,6 @@ class MainFragment : Fragment() {
     override fun onDestroy() {
         adapter.removeListener()
         super.onDestroy()
-    }
-
-    private fun View.showSnackBar(
-        text: String,
-        actionText: String,
-        action: (View) -> Unit,
-        length: Int = Snackbar.LENGTH_INDEFINITE
-    ) {
-        Snackbar.make(this, text, length).setAction(actionText, action).show()
     }
 
     fun View.showKeyboard() {
