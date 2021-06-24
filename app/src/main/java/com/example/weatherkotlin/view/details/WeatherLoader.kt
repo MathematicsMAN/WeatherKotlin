@@ -22,7 +22,7 @@ class WeatherLoader(private val listener: WeatherLoaderListener,
     fun loadWeather() {
         try {
             val uri = URL("https://api.weather.yandex.ru/v2/informers?" +
-                    "lat=${lat}&lon=${lon}")
+                    "lat=$lat&lon=$lon")
             val handler = Handler(Looper.getMainLooper())
             Thread{
                 var urlConnection: HttpsURLConnection? = null

@@ -61,12 +61,13 @@ class MainFragment : Fragment() {
             Observer { renderData(it) })
         viewModel.getWeatherFromLocalSourceRus()
 
-        binding.mainFragmentFAB
+/*        binding.mainFragmentFAB
             .animate()
             .scaleXBy(2.0f)
             .scaleYBy(2.0f)
             .setDuration(2000L)
             .start()
+*/
     }
 
     private fun changeWeatherDataSet() {
