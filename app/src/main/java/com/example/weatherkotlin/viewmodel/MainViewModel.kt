@@ -2,6 +2,7 @@ package com.example.weatherkotlin.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.weatherkotlin.app.AppState
 import com.example.weatherkotlin.repository.Repository
 import com.example.weatherkotlin.repository.RepositoryImpl
 import java.lang.Thread.sleep
@@ -22,7 +23,8 @@ class MainViewModel(
         liveDataToObserve.value = AppState.Loading
         Thread {
             sleep(1000)
-            liveDataToObserve.postValue(AppState.Success(
+            liveDataToObserve.postValue(
+                AppState.Success(
                 if (isRussian) repositoryImpl.getWeatherFromLocalStorageRus()
                 else  repositoryImpl.getWeatherFromLocalStorageWorld()
             ))
