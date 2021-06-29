@@ -5,6 +5,10 @@ plugins {
     id 'kotlin-kapt'
 }
 
+//apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+
 android {
     compileSdkVersion 30
 
@@ -34,6 +38,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            versionNameSuffix "-debug"
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -41,6 +48,17 @@ android {
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    flavorDimensions 'cities'
+    productFlavors {
+        russian {
+            dimension 'cities'
+            versionNameSuffix '.rus'
+        }
+        world {
+            dimension 'cities'
+            versionNameSuffix '.world'
+        }
     }
 }
 
@@ -79,7 +97,16 @@ dependencies {
     
     //Room
     implementation 'androidx.room:room-runtime:2.3.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'androidx.fragment:fragment:1.2.5'
     kapt 'androidx.room:room-compiler:2.3.0'
+
+    //GoogleMaps
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
+
+    //Google Firebase
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

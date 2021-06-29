@@ -16,15 +16,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/mainFragmentFAB"
+        android:id="@+id/mainFragmentFABLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_russia"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:src="@android:drawable/ic_dialog_map"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:maxImageSize="@dimen/fab_icon_size" />
-
+<!--
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/mainFragmentFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_russia"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:maxImageSize="@dimen/fab_icon_size" />
+    -->
     <FrameLayout
         android:id="@+id/mainFragmentLoadingLayout"
         android:layout_width="match_parent"
@@ -38,5 +49,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
+
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
