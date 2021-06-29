@@ -38,6 +38,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            versionNameSuffix "-debug"
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -45,6 +48,17 @@ android {
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    flavorDimensions 'cities'
+    productFlavors {
+        russian {
+            dimension 'cities'
+            versionNameSuffix '.rus'
+        }
+        world {
+            dimension 'cities'
+            versionNameSuffix '.world'
+        }
     }
 }
 
