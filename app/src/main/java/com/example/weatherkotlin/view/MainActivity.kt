@@ -62,7 +62,18 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
+            R.id.menu_content_provider -> {
+                supportFragmentManager.apply {
+                    beginTransaction()
+                        .add(R.id.container, ContentProviderFragment.newInstance())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                }
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
 }
