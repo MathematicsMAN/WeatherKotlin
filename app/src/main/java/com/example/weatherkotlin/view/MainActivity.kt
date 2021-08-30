@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.weatherkotlin.R
 import com.example.weatherkotlin.view.experiments.ThreadsFragment
 import com.example.weatherkotlin.databinding.MainActivityBinding
+import com.example.weatherkotlin.view.googlemaps.GoogleMapsFragment
 import com.example.weatherkotlin.view.history.HistoryFragment
 import com.example.weatherkotlin.view.main.MainFragment
 
@@ -44,6 +45,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.menu_google_maps -> {
+                supportFragmentManager.apply {
+                    beginTransaction()
+                        .add(R.id.container, GoogleMapsFragment())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                }
+                true
+            }
             R.id.menu_threads -> {
                 supportFragmentManager.apply {
                     beginTransaction()
@@ -62,7 +72,18 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
+            R.id.menu_content_provider -> {
+                supportFragmentManager.apply {
+                    beginTransaction()
+                        .add(R.id.container, ContentProviderFragment.newInstance())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                }
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
 }
